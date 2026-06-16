@@ -1,25 +1,40 @@
 # AGENTS.md
 
-Guidance for AI coding agents (Claude Code, Codex, Warp, etc.) working in this repository.
+Guidance for AI coding agents (Claude Code, OpenCode, and others) working in this repository.
 
 ## What this repo is
 
-A **Claude Code / OpenCode skill** implemented entirely as Markdown. The runtime artifact is `SKILL.md`: the agent reads its YAML frontmatter (metadata + allowed tools) followed by the editor prompt. There is no build step and no code to run.
+A Claude Code / OpenCode skill implemented entirely as Markdown. The runtime artifact is `SKILL.md`: the agent reads its YAML frontmatter (metadata and allowed tools) followed by the operating prompt. There is no build step and no code to run.
+
+Plainspeak is a fork of `blader/humanizer` retuned for scientific, technical, and data-science prose. It makes technical writing clear and removes AI tells without flattening domain terminology.
 
 ## Key files
 
-- `SKILL.md` — the skill itself. YAML frontmatter (`name`, `version`, `description`, `allowed-tools`) followed by the canonical, numbered pattern list with before/after examples. **This is the source of truth.**
-- `README.md` — for humans: installation, usage, a summary table of the patterns, and a version history.
+- `SKILL.md` is the skill: frontmatter (`name`, `version`, `description`, `allowed-tools`) followed by the core rules, technical-register guidance, quick checks, and process. This is the source of truth for behavior.
+- `references/` holds the catalogs the skill loads on demand: `phrases.md`, `structures.md`, `technical.md`, `examples.md`, and `sources.md`.
+- `README.md` is for humans: install, usage, scope, examples, provenance, and version history.
+- `LICENSE` is the upstream MIT license (Siqi Chen, 2025). Keep it unchanged.
 
 ## The maintenance contract
 
-`SKILL.md` and `README.md` must stay in sync. When you change behavior or content:
+Plainspeak does not use the upstream "33 numbered patterns" contract. Rules are grouped by kind (phrases, structures) and by artifact (technical), not numbered. Do not reintroduce a pattern-count invariant.
 
-- **Patterns:** the skill currently defines **33 numbered patterns**. If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
-- **Version:** `SKILL.md` frontmatter has a `version:` field and `README.md` has a "Version History" section. Bump both together.
-- **Non-obvious fixes:** if you change the prompt to handle a tricky failure mode (a repeated mis-edit, an unexpected tone shift), add a short note to the README version history explaining what was fixed and why.
+When you change behavior or content:
 
-## Editing SKILL.md
+- **Keep `SKILL.md` self-sufficient.** It must work on its own for short text. The reference files add depth for longer or artifact-specific tasks. If you add a rule to a reference file that changes default behavior, make sure `SKILL.md` still reflects it.
+- **Keep `SKILL.md` and `README.md` in sync** on scope, provenance, and version. If you change the artifact scope, update both the skill's description and the README's "what it is good for" section. If you change the version, update the frontmatter and the README version history together.
+- **Preserve attribution.** Any new borrowed material gets credited in `references/sources.md` and, if it changes the lineage, in the README provenance section.
+- **Record non-obvious fixes.** If you change the prompt to handle a tricky failure mode (a repeated mis-edit, a flattened domain term, a tone shift), add a short note to the README version history explaining what was fixed and why.
+
+## Editing rules
 
 - Preserve valid YAML frontmatter (formatting and indentation).
-- The prompt below the frontmatter is the product. Edit it like a careful instruction document, not code.
+- The prompt and reference files are the product. Edit them like a careful instruction document, not code.
+- **Practice what the skill preaches.** No em or en dashes anywhere in the skill or its references; use periods, commas, colons, or parentheses. No promotional padding, no inflated vocabulary. Scan your changes before committing: `grep -rn $'—\|–' SKILL.md references/` should return nothing.
+- Keep domain terms intact in examples (WIS, MCMC, cross-validation). The skill teaches by exemplar, so its own examples must follow its rules.
+
+## Commits
+
+- One logical unit per commit; leave `SKILL.md` parseable and the skill usable at every commit.
+- No `Co-Authored-By` or AI-attribution lines in commit messages.
+- Do not push or make the repo public without explicit owner approval.
