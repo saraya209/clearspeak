@@ -2,7 +2,9 @@
 
 A skill for Claude Code and OpenCode that makes scientific, technical, and data-science writing clear. Plainspeak cuts padding, keeps the exact terms and numbers, and puts the claim first. The same edits remove the signs of AI writing, so clean prose comes out as a result.
 
-Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) retuned for technical prose. Where humanizer aims for broad naturalness and sometimes reaches for blog voice, Plainspeak keeps reference text neutral and preserves domain terminology. For essays, opinion, and personal writing, use humanizer instead.
+Plainspeak takes its method and its name from Orwell. The core rules paraphrase the six from his "Politics and the English Language" (1946); the name sets plain, truthful prose against the obfuscating Newspeak of *1984*.
+
+Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) retuned for technical prose. For essays, opinion, and personal writing, use humanizer instead.
 
 ## What it is good for
 
@@ -13,7 +15,7 @@ Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) 
 - Data dictionaries and dataset descriptions
 - Notebook narration and reproducibility notes
 
-## What makes it different from a general humanizer
+## What makes it different
 
 - **Domain terms are precision, not jargon.** Plainspeak preserves WIS, MCMC, cross-validation, posterior, bootstrap, and their kin instead of flattening them into vague everyday words.
 - **It respects scientific convention.** Passive voice stays in methods sections. Numbers, confidence intervals, p-values, units, software versions, and citations stay intact.
@@ -104,9 +106,9 @@ After:
 
 More examples are in [references/examples.md](references/examples.md).
 
-## Provenance and attribution
+## Credits
 
-Plainspeak combines two open-source lineages. The full chain, with links and notes on what was borrowed, is in [references/sources.md](references/sources.md).
+Plainspeak builds on two open-source lineages. The full chain, with links and notes on what was borrowed, is in [references/sources.md](references/sources.md).
 
 - **Git base:** [blader/humanizer](https://github.com/blader/humanizer) by Siqi Chen (MIT), rooted in [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). This repository keeps that history and license.
 - **Rule catalog:** adapted from [deslop](https://github.com/stephenturner/skill-deslop) by Stephen Turner (MIT), which itself adapts [tropes.fyi](https://tropes.fyi) by Ossama Hassanein and stop-slop by Hardik Pandya.
