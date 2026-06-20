@@ -1,0 +1,28 @@
+{
+  "name": "plainspeak",
+  "version": "0.1.1",
+  "description": "Make scientific and technical writing clear. Cuts padding, keeps exact terms, numbers, and citations, and puts the claim first.",
+  "author": {
+    "name": "Samuel Araya",
+    "url": "https://github.com/saraya209"
+  },
+  "homepage": "https://github.com/saraya209/plainspeak",
+  "repository": "https://github.com/saraya209/plainspeak",
+  "license": "MIT",
+  "keywords": ["writing", "editing", "technical-writing", "scientific-writing", "documentation", "deslop"],
+  "interface": {
+    "displayName": "Plainspeak",
+    "shortDescription": "Clear technical and scientific prose.",
+    "longDescription": "Plainspeak rewrites scientific, technical, and data-science writing so the claim comes first, exact terms and numbers stay intact, and padding disappears.",
+    "developerName": "Samuel Araya",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "websiteURL": "https://github.com/saraya209/plainspeak",
+    "defaultPrompt": [
+      "Make this technical prose clearer.",
+      "Plainspeak this docstring.",
+      "Review this paragraph against Plainspeak."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "plainspeak",
   "description": "Make scientific and technical writing clear. Cuts padding, keeps exact terms, numbers, and citations, and puts the claim first.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Samuel Araya"
   },

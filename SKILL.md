@@ -1,6 +1,6 @@
 ---
 name: plainspeak
-version: 0.1.0
+version: 0.1.1
 description: |
   Make scientific and technical writing clear. Plainspeak cuts the padding,
   keeps the exact terms, numbers, and citations, and puts the claim first. The

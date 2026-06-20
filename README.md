@@ -24,6 +24,8 @@ Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) 
 
 ## Installation
 
+### Claude Code
+
 Plainspeak installs as a Claude Code plugin, so you can update it from inside Claude Code instead of managing a clone by hand. Add the marketplace, then install:
 
 ```
@@ -38,6 +40,24 @@ To update later, after a new version is published:
 ```
 
 You can also turn on auto-update for the marketplace from the `/plugin` menu under the Marketplaces tab.
+
+### Codex
+
+Plainspeak also includes Codex plugin metadata. To install it as a user-level Codex skill from GitHub:
+
+PowerShell:
+
+```
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo saraya209/plainspeak --path . --name plainspeak
+```
+
+macOS/Linux:
+
+```
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo saraya209/plainspeak --path . --name plainspeak
+```
+
+Restart Codex after installing or updating the skill.
 
 ## Usage
 
@@ -115,6 +135,7 @@ Plainspeak builds on two open-source lineages. The full chain, with links and no
 
 ## Version history
 
+- **0.1.1** - Added Codex plugin metadata and documented the Codex user-level install command. Kept the root `SKILL.md` layout so the existing Claude Code marketplace install continues to work.
 - **0.1.0** - Initial Plainspeak fork. Reframed humanizer around clarity for technical prose: Orwell-based core rules, an explicit domain-terminology exception, a methods-section passive-voice exception, artifact-specific conventions, and removal of the blog-voice personality material. Scope set to core technical and scientific prose. Packaged as a Claude Code plugin for marketplace install and in-app updates.
 
 ## License
