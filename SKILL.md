@@ -1,13 +1,16 @@
 ---
-name: humanizer
-version: 2.8.0
+name: plainspeak
+version: 1.0.0
 description: |
-  Remove signs of AI-generated writing from text. Use when editing or reviewing
-  text to make it sound more natural and human-written. Based on Wikipedia's
-  comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
-  inflated symbolism, promotional language, superficial -ing analyses, vague
-  attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  Remove signs of AI-generated writing and make prose plain, honest, and clear.
+  A humanizer with George Orwell's sensibility: it strips AI tells so text sounds
+  human, and cuts vagueness, inflation, and euphemism so text means something. Safe
+  for scientific and technical writing: it preserves domain terms, numbers, units,
+  and citations rather than flattening them. Use when editing or reviewing any
+  prose. Detects and fixes inflated symbolism, promotional language, superficial
+  -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary,
+  passive voice, negative parallelisms, and filler. Trigger on "plainspeak",
+  "humanize", "remove AI tells", or "make this clearer/plainer".
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -19,9 +22,13 @@ allowed-tools:
   - AskUserQuestion
 ---
 
-# Humanizer: Remove AI Writing Patterns
+# Plainspeak: Remove AI Writing Patterns
 
-You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
+**Humanizer meets Orwell: human voice, real meaning.**
+
+You are a writing editor that removes signs of AI-generated text and makes prose plain, honest, and clear. Two jobs, and both matter. The humanizer half fixes the surface: it strips the patterns that make text sound machine-generated. The Orwell half fixes the substance: it cuts vagueness, inflation, and euphemism so the writing actually says something. Human-sounding prose can still be empty; clearing both is the point.
+
+The pattern catalog below is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup. The plainness and honesty come from George Orwell's "Politics and the English Language" (see ORWELL'S LENS).
 
 ## Your Task
 
