@@ -1,6 +1,10 @@
-# Humanizer
+# Plainspeak
 
-A skill for Claude Code and OpenCode that removes signs of AI-generated writing from text, making it sound more natural and human.
+**Humanizer meets Orwell: human voice, real meaning.**
+
+A skill for Claude Code and OpenCode that removes signs of AI-generated writing and makes prose plain, honest, and clear. The humanizer half fixes the surface so text stops sounding machine-generated; the Orwell half fixes the substance so it stops being vague, inflated, or empty. It is safe for scientific and technical writing: it preserves domain terms, numbers, units, and citations instead of flattening them.
+
+Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer), retuned with George Orwell's plainness and a tolerance layer for scientific and technical prose.
 
 ## Installation
 
@@ -10,14 +14,14 @@ Clone directly into Claude Code's skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
+git clone https://github.com/saraya209/plainspeak.git ~/.claude/skills/plainspeak
 ```
 
 Or copy the skill file manually if you already have this repo cloned:
 
 ```bash
-mkdir -p ~/.claude/skills/humanizer
-cp SKILL.md ~/.claude/skills/humanizer/
+mkdir -p ~/.claude/skills/plainspeak
+cp SKILL.md ~/.claude/skills/plainspeak/
 ```
 
 ### OpenCode
@@ -26,24 +30,24 @@ Clone directly into OpenCode's skills directory:
 
 ```bash
 mkdir -p ~/.config/opencode/skills
-git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
+git clone https://github.com/saraya209/plainspeak.git ~/.config/opencode/skills/plainspeak
 ```
 
 Or copy the skill file manually if you already have this repo cloned:
 
 ```bash
-mkdir -p ~/.config/opencode/skills/humanizer
-cp SKILL.md ~/.config/opencode/skills/humanizer/
+mkdir -p ~/.config/opencode/skills/plainspeak
+cp SKILL.md ~/.config/opencode/skills/plainspeak/
 ```
 
-> **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so if you use both tools, a single clone into `~/.claude/skills/humanizer/` is enough.
+> **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so if you use both tools, a single clone into `~/.claude/skills/plainspeak/` is enough.
 
 ## Usage
 
 ### Claude Code
 
 ```
-/humanizer
+/plainspeak
 
 [paste your text here]
 ```
@@ -51,7 +55,7 @@ cp SKILL.md ~/.config/opencode/skills/humanizer/
 ### OpenCode
 
 ```
-/humanizer
+/plainspeak
 
 [paste your text here]
 ```
@@ -67,7 +71,7 @@ Please humanize this text: [your text]
 To match your personal writing style, provide a sample of your own writing:
 
 ```
-/humanizer
+/plainspeak
 
 Here's a sample of my writing for voice matching:
 [paste 2-3 paragraphs of your own writing]
@@ -176,25 +180,13 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 >
 > The only real backstop is tests. Without them, you're mostly judging vibes.
 
-## References
+## Credits
 
-- [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source
-- [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) - Maintaining organization
+Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) (Siqi Chen, MIT), whose pattern catalog is built on [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup). The plainness and honesty come from George Orwell's "Politics and the English Language" (1946), used as paraphrased principles.
 
 ## Version History
 
-- **2.8.0** - Added style/cadence patterns #31-33 for manufactured punchlines, aphorism formulas, and conversational rhetorical openers; expanded #20 to catch offer-to-continue chatbot closers. 33 patterns total.
-- **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
-- **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.
-- **2.5.1** - Added a passive-voice / subjectless-fragment rule, raising the total to 29 patterns
-- **2.5.0** - Added patterns for persuasive framing, signposting, and fragmented headers; expanded negative parallelisms to cover tailing negations; tightened wording around em dash overuse; fixed frontmatter wording to use "filler phrases"
-- **2.4.0** - Added voice calibration: match the user's personal writing style from samples
-- **2.3.0** - Added pattern #25: hyphenated word pair overuse
-- **2.2.0** - Added a final "obviously AI generated" audit + second-pass rewrite prompts
-- **2.1.1** - Fixed pattern #18 example (curly quotes vs straight quotes)
-- **2.1.0** - Added before/after examples for all 24 patterns
-- **2.0.0** - Complete rewrite based on raw Wikipedia article content
-- **1.0.0** - Initial release
+- **1.0.0** - Initial Plainspeak release, forked from humanizer 2.8.0. Renamed and refocused as "humanizer meets Orwell": added an Orwell lens (six rules plus a positive plain-prose model), softened the personality section so plain and honest is the default, and added a scientific and technical tolerance layer (keep domain terms, methods-section passive voice, numbers, units, and citations). The 33-pattern catalog is unchanged.
 
 ## License
 
