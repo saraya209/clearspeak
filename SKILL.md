@@ -118,6 +118,17 @@ For reference, technical, or encyclopedic text, none of these are defects: neutr
 > I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle, but I keep thinking about those agents working through the night.
 
 
+## SCIENTIFIC AND TECHNICAL WRITING
+
+Plainspeak is safe for scientific, technical, and data-science prose. The tells below still apply, but with a tolerance layer: do not strip precision in the name of plainness. Rule 6 governs here.
+
+- **Domain terms are precision, not jargon.** Keep the exact technical term when it carries methodological meaning (for example WIS, MCMC, posterior predictive check). Orwell's rule 5 targets needless jargon, not the real vocabulary of a field. Never flatten a precise term into a vague everyday word.
+- **Passive voice is conventional in methods.** "Samples were incubated", "Reads were aligned with BWA-MEM" should stay passive. Flag passive only when it hides an actor in results or discussion.
+- **Keep the numbers exactly.** Preserve figures, confidence intervals, p-values, units, sample sizes, software versions, dataset names, and citations unless the user asks for substantive editing.
+- **Name specific sources.** Prefer a named author, dataset, model, or metric over "researchers have shown" or "studies suggest". This is the fix for vague attribution, not an exception to it.
+- **Real uncertainty is a claim, not hedging.** "Underpowered for the interaction term" is precise; keep it. Cut only decorative hedging ("it could potentially be argued that").
+
+
 ## CONTENT PATTERNS
 
 ### 1. Undue Emphasis on Significance, Legacy, and Broader Trends
@@ -285,6 +296,8 @@ For reference, technical, or encyclopedic text, none of these are defects: neutr
 
 **After:**
 > You do not need a configuration file. The system preserves the results automatically.
+
+**Exception:** passive voice is conventional in a scientific methods section ("Samples were incubated at 37C"). Do not convert it there. Flag passive only when it hides an actor in results, discussion, or documentation. See SCIENTIFIC AND TECHNICAL WRITING.
 
 
 ## STYLE PATTERNS
