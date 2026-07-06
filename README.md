@@ -2,7 +2,7 @@
 
 **Humanizer meets Orwell: human voice, real meaning.**
 
-Plainspeak humanizes AI writing, applies Orwell's plainness, and adds a tolerance layer that keeps domain and technical terms intact. It is safe for scientific and technical prose: it preserves numbers, units, and citations instead of flattening them.
+Plainspeak humanizes AI-generated writing without sanding off meaning or voice. It applies Orwell's standard for honest language and adds a tolerance layer that keeps domain and technical terms intact. It is safe for scientific and technical prose: it preserves numbers, units, and citations instead of flattening them.
 
 ## What it catches
 
@@ -17,7 +17,7 @@ It catches the tells below (see [SKILL.md](SKILL.md) for the full catalog):
 
 ## How it differs from humanizer
 
-Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) and keeps its pattern catalog. The difference is register: humanizer was built for blog and essay voice and tends to add a conversational lift, while Plainspeak keeps reference prose plain.
+Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) and keeps its pattern catalog. The difference is register: humanizer was built for blog and essay voice and tends to add a conversational lift, while Plainspeak keeps reference prose direct, natural, and precise.
 
 Two AI-generated sentences, each run through both skills (Claude Opus 4.8, clean sessions).
 
@@ -117,6 +117,7 @@ Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) 
 
 ## Version History
 
+- **1.0.1** - Minimal prompt cleanup to reduce overfitting while keeping the 33-pattern catalog: internalized the draft/audit loop, replaced the opinionated fallback with a plain, natural, varied default, preserved coverage instead of paragraph count, blocked invented specificity, added warning-list caveats, tightened passive-voice and hyphenated-compound handling, and clarified punctuation/formatting cleanup.
 - **1.0.0** - Initial Plainspeak release, forked from humanizer 2.8.0. Renamed and refocused as "humanizer meets Orwell": added an Orwell lens (six rules plus a positive plain-prose model), softened the personality section so plain and honest is the default, and added a scientific and technical tolerance layer (keep domain terms, methods-section passive voice, numbers, units, and citations). The 33-pattern catalog is unchanged.
 
 ## License
