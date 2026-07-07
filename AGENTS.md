@@ -15,7 +15,7 @@ Guidance for AI coding agents (Claude Code, Codex, Warp, etc.) working in this r
 
 `SKILL.md` and `README.md` must stay in sync. When you change behavior or content:
 
-- **Patterns:** the skill currently defines **33 numbered patterns** (inherited from humanizer, kept stable). If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
+- **Patterns:** the skill currently defines **34 numbered patterns** (inherited from humanizer, kept stable). If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
 - **The non-pattern sections** (ORWELL'S LENS, PERSONALITY AND SOUL, SCIENTIFIC AND TECHNICAL WRITING) carry the Plainspeak character. Keep them consistent with each other: plain and honest is the default, voice is the marked exception, and the scientific tolerance layer (domain terms, methods passive voice, numbers, citations) overrides a pattern only via rule 6.
 - **Version:** `SKILL.md` frontmatter has a `version:` field and `README.md` has a "Version History" section. Bump both together.
 - **Non-obvious fixes:** if you change the prompt to handle a tricky failure mode (a repeated mis-edit, an unexpected tone shift), add a short note to the README version history explaining what was fixed and why.

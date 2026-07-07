@@ -9,7 +9,7 @@ Plainspeak humanizes AI-generated writing without sanding off meaning or voice. 
 It catches the tells below (see [SKILL.md](SKILL.md) for the full catalog):
 
 - **Inflated content:** significance inflation, notability name-dropping, promotional language, superficial -ing analyses, formulaic "challenges" sections.
-- **Padded language:** AI vocabulary, copula avoidance ("serves as" for "is"), filler phrases, excessive hedging, generic positive conclusions.
+- **Padded language:** AI vocabulary, copula avoidance ("serves as" for "is"), stale metaphors and padded verbs ("give rise to" for "cause"), filler phrases, excessive hedging, generic positive conclusions.
 - **Formulaic structure:** negative parallelism, rule of three, false ranges, synonym cycling, manufactured punchlines, aphorism formulas, rhetorical openers.
 - **Hidden actors:** passive voice and subjectless fragments, vague attributions ("experts believe").
 - **Formatting tells:** em and en dashes, boldface overuse, inline-header lists, title-case headings, emojis, curly quotes.
@@ -117,6 +117,7 @@ Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer) 
 
 ## Version History
 
+- **1.1.0** - Deepened the Orwell layer: added a pattern for stale metaphors and padded verbs (taught as a recognizable move, not a banned-phrase list, to avoid overfitting), wired Orwell's six rules into the audit step as a final gate, drew an explicit line in the personality section between adding voice and inventing facts (with a corrected example), and relabeled the full-example stages for clarity.
 - **1.0.1** - Minimal prompt cleanup to reduce overfitting while keeping the 33-pattern catalog: internalized the draft/audit loop, replaced the opinionated fallback with a plain, natural, varied default, preserved coverage instead of paragraph count, blocked invented specificity, added warning-list caveats, tightened passive-voice and hyphenated-compound handling, and clarified punctuation/formatting cleanup.
 - **1.0.0** - Initial Plainspeak release, forked from humanizer 2.8.0. Renamed and refocused as "humanizer meets Orwell": added an Orwell lens (six rules plus a positive plain-prose model), softened the personality section so plain and honest is the default, and added a scientific and technical tolerance layer (keep domain terms, methods-section passive voice, numbers, units, and citations). The 33-pattern catalog is unchanged.
 

@@ -1,6 +1,6 @@
 ---
 name: plainspeak
-version: 1.0.1
+version: 1.1.0
 description: |
   Remove signs of AI-generated writing and make prose plain, honest, and clear.
   A humanizer with George Orwell's sensibility: it strips AI tells so text sounds
@@ -105,6 +105,8 @@ Some writing calls for a more expressive voice, and a flat, evenly paced wall of
 
 For reference, technical, or encyclopedic text, none of these are defects by themselves: restrained reporting with no first person is often right there. This list applies only once you have decided the piece calls for a more expressive voice.
 
+Voice is rhythm, stance, word choice, and what you choose to dwell on, not new facts. You may add the writer's reaction to what's there; you may not add events, details, or claims that aren't in the source. Adding color is not the same as inventing it.
+
 ### How to add voice (only when the genre calls for it):
 
 **Vary the rhythm.** Mix short sentences with longer ones instead of an even cadence.
@@ -117,7 +119,7 @@ For reference, technical, or encyclopedic text, none of these are defects by the
 > The experiment produced interesting results. The agents generated 3 million lines of code. Some developers were impressed while others were skeptical. The implications remain unclear.
 
 ### After (has a voice):
-> I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle, but I keep thinking about those agents working through the night.
+> I genuinely don't know how to feel about this one. Three million lines of code. Half the dev community is losing their minds, the other half are explaining why it doesn't count. The truth is probably somewhere boring in the middle, but that number keeps sticking with me.
 
 
 ## SCIENTIFIC AND TECHNICAL WRITING
@@ -269,7 +271,26 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 > The event includes talks and panels. There's also time for informal networking between sessions.
 
 
-### 11. Elegant Variation (Synonym Cycling)
+### 11. Stale Metaphors and Padded Verbs
+
+**Problem:** Two habits Orwell singled out, both alive in AI prose. First, metaphors lifted whole from print because they save the trouble of thinking: phrases you've read a hundred times and no longer picture. Second, a plain verb swollen into a noun phrase built on an all-purpose verb (make, give, serve, effect, exhibit, play a part) where one verb would do.
+
+Do not treat this as a banned-phrase list; there isn't one. Recognize the move. For a metaphor: can you still see the image, and does it earn its place? Keep it. Is it automatic, something you'd type without thinking? Say the plain thing instead, and don't swap in a second cliché to replace the first. For a padded verb: find the real verb hiding inside the phrase and use it.
+
+**Before:**
+> The reforms militate against local autonomy and give rise to tensions that, at the end of the day, serve to undermine trust.
+
+**After:**
+> The reforms weaken local autonomy and create tensions that undermine trust.
+
+**Before:**
+> The committee will make a decision after conducting an examination of the proposal.
+
+**After:**
+> The committee will decide after examining the proposal.
+
+
+### 12. Elegant Variation (Synonym Cycling)
 
 **Problem:** AI has repetition-penalty code causing excessive synonym substitution.
 
@@ -280,7 +301,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 > The protagonist faces many challenges but eventually triumphs and returns home.
 
 
-### 12. False Ranges
+### 13. False Ranges
 
 **Problem:** LLMs use "from X to Y" constructions where X and Y aren't on a meaningful scale.
 
@@ -291,7 +312,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 > The book covers the Big Bang, star formation, and current theories about dark matter.
 
 
-### 13. Passive Voice and Subjectless Fragments
+### 14. Passive Voice and Subjectless Fragments
 
 **Problem:** LLMs often hide the actor or drop the subject entirely with lines like "No configuration file needed" or "The results are preserved automatically." Rewrite these when active voice clarifies the actor, responsibility, or flow.
 
@@ -308,7 +329,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 
 Clean decorative or mechanical formatting by default: emoji headers, bold-label bullets, title-case headings, ornamental emphasis, em/en dashes, and curly quotes. Preserve formatting only when the user asks, when the format is structurally required, or when formatting carries meaning.
 
-### 14. Em Dashes (and En Dashes): Cut Them
+### 15. Em Dashes (and En Dashes): Cut Them
 
 **Rule:** Avoid em dashes (—) and en dashes (–) in final rewrites. They are overused in AI-generated prose and often make sentences feel staged. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure the sentence. Do not use them unless preserving exact quoted or source text requires it. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
 
@@ -327,7 +348,7 @@ Clean decorative or mechanical formatting by default: emoji headers, bold-label 
 Before returning the final rewrite, scan it for `—` and `–`. Replace any hit unless it is part of exact quoted or source text that must stay unchanged.
 
 
-### 15. Overuse of Boldface
+### 16. Overuse of Boldface
 
 **Problem:** AI chatbots emphasize phrases in boldface mechanically.
 
@@ -338,7 +359,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas and Balanced Scorecard.
 
 
-### 16. Inline-Header Vertical Lists
+### 17. Inline-Header Vertical Lists
 
 **Problem:** AI outputs lists where items start with bolded headers followed by colons.
 
@@ -351,7 +372,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The update improves the interface, speeds up load times through optimized algorithms, and adds end-to-end encryption.
 
 
-### 17. Title Case in Headings
+### 18. Title Case in Headings
 
 **Problem:** AI chatbots capitalize all main words in headings.
 
@@ -362,7 +383,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > ## Strategic negotiations and global partnerships
 
 
-### 18. Emojis
+### 19. Emojis
 
 **Problem:** AI chatbots often decorate headings or bullet points with emojis.
 
@@ -375,7 +396,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The product launches in Q3. User research showed a preference for simplicity. Next step: schedule a follow-up meeting.
 
 
-### 19. Curly Quotation Marks
+### 20. Curly Quotation Marks
 
 **Problem:** Some AI models output curly quotes (“...”) instead of straight quotes ("..."). Plainspeak uses straight quotes in final rewrites.
 
@@ -388,7 +409,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 
 ## COMMUNICATION PATTERNS
 
-### 20. Collaborative Communication Artifacts
+### 21. Collaborative Communication Artifacts
 
 **Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give examples?, Should I continue?, let me know, here is a...
 
@@ -401,7 +422,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The French Revolution began in 1789 when financial crisis and food shortages led to widespread unrest.
 
 
-### 21. Knowledge-Cutoff Disclaimers and Speculative Gap-Filling
+### 22. Knowledge-Cutoff Disclaimers and Speculative Gap-Filling
 
 **Words to watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information, not publicly available, maintains a low profile, keeps personal details private, prefers to stay out of the spotlight, likely [grew up/studied/began], it is believed that
 
@@ -420,7 +441,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > Her early life is not documented in the available sources. (Or omit the section.)
 
 
-### 22. Sycophantic/Servile Tone
+### 23. Sycophantic/Servile Tone
 
 **Problem:** Overly positive, people-pleasing language.
 
@@ -433,7 +454,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 
 ## FILLER AND HEDGING
 
-### 23. Filler Phrases
+### 24. Filler Phrases
 
 **Before → After:**
 - "In order to achieve this goal" → "To achieve this"
@@ -444,7 +465,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 - "It is important to note that the data shows" → "The data shows"
 
 
-### 24. Excessive Hedging
+### 25. Excessive Hedging
 
 **Problem:** Over-qualifying statements.
 
@@ -455,7 +476,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The policy may affect outcomes.
 
 
-### 25. Generic Positive Conclusions
+### 26. Generic Positive Conclusions
 
 **Problem:** Vague upbeat endings.
 
@@ -466,7 +487,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The company plans to open two more locations next year.
 
 
-### 26. Hyphenated Word Pair Overuse
+### 27. Hyphenated Word Pair Overuse
 
 **Words to watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
 
@@ -479,7 +500,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The cross-functional team delivered a high-quality, data-driven report. The team is cross functional, the report is high quality, and the methodology is data driven.
 
 
-### 27. Persuasive Authority Tropes
+### 28. Persuasive Authority Tropes
 
 **Phrases to watch:** The real question is, at its core, in reality, what really matters, fundamentally, the deeper issue, the heart of the matter
 
@@ -492,7 +513,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > The question is whether teams can adapt. That mostly depends on whether the organization is ready to change its habits.
 
 
-### 28. Signposting and Announcements
+### 29. Signposting and Announcements
 
 **Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado
 
@@ -505,7 +526,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > Next.js caches data at multiple layers, including request memoization, the data cache, and the router cache.
 
 
-### 29. Fragmented Headers
+### 30. Fragmented Headers
 
 **Signs to watch:** A heading followed by a one-line paragraph that simply restates the heading before the real content begins.
 
@@ -524,7 +545,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > When users hit a slow page, they leave.
 
 
-### 30. Diff-Anchored Writing
+### 31. Diff-Anchored Writing
 
 **Problem:** Documentation or comments written as if narrating a change rather than describing the thing as it is. Unless the document is inherently version-scoped (changelogs, release notes, migration guides), it should read coherently without knowing what changed in the last commit.
 
@@ -535,7 +556,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > This function uses a hash map for O(1) lookups, avoiding the O(n²) cost of naive iteration.
 
 
-### 31. Manufactured Punchlines and Staccato Drama
+### 32. Manufactured Punchlines and Staccato Drama
 
 **Problem:** LLMs often make every sentence land like a quotable closer, then stack short declarative fragments to manufacture drama. A single short sentence for emphasis is fine; a run of them starts to sound engineered.
 
@@ -546,7 +567,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > AlphaEvolve changed the search because it did not favor symmetry or human-looking designs. That made some of the older assumptions less useful.
 
 
-### 32. Aphorism Formulas
+### 33. Aphorism Formulas
 
 **Words to watch:** X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of
 
@@ -559,7 +580,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > Symmetric layouts often feel more predictable to users. Teams can over-optimize workflows and miss how people actually use them.
 
 
-### 33. Conversational Rhetorical Openers
+### 34. Conversational Rhetorical Openers
 
 **Phrases to watch:** Honestly?, Look, Here's the thing, The thing is, Let's be honest, Real talk, when used as standalone hooks or fake-candid pauses before an ordinary point.
 
@@ -613,7 +634,7 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 
 1. Read the input carefully and identify every relevant pattern above.
 2. Write a draft rewrite internally. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
-3. Audit internally: ask "what still sounds AI-generated here?" and fix the remaining tells.
+3. Audit internally: ask "what still sounds AI-generated here?" and fix the remaining tells. Then run the draft through Orwell's six rules (see ORWELL'S LENS) as a final gate: any stale metaphor, needless long word, cuttable word, or actor-hiding passive that slipped through? Fix it, unless Rule 6 (clarity and correctness) says leave it.
 4. Return the final rewrite first. Add a short change note only when the user asks for one or when it helps explain a non-obvious edit. Do not show the draft or audit unless the user explicitly asks for a review.
 
 
@@ -636,7 +657,7 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 >
 > In conclusion, the future looks bright. Exciting times lie ahead as we continue this journey toward excellence. Let me know if you’d like me to expand on any section!
 
-**Draft rewrite:**
+**First pass (cleaner, but still a little AI):**
 > AI coding assistants can speed up repetitive coding tasks, but they do not replace judgment on architecture, debugging, or product decisions.
 >
 > The tools are good at boilerplate: config files, test scaffolding, repetitive refactors. They are bad at knowing when they are wrong. A suggestion can compile, pass lint, and still miss the point if no one reviews it.
@@ -647,11 +668,11 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 >
 > None of this means the tools are useless. It means they are tools. They do not replace judgment, and they do not eliminate the need for tests. If you do not have tests, you cannot tell whether the suggestion is right.
 
-**What makes the below so obviously AI generated?**
+**Why the first pass still reads as AI:**
 - The rhythm is still a bit too tidy (clean contrasts, evenly paced paragraphs).
 - The closer leans a touch slogan-y ("If you do not have tests...") rather than sounding like a person talking.
 
-**Now make it not obviously AI generated.**
+**Final (human):**
 > AI coding assistants can make you faster at the boring parts. Not everything. Definitely not architecture.
 >
 > They're great at boilerplate: config files, test scaffolding, repetitive refactors. They're also great at sounding right while being wrong. I've accepted suggestions that compiled, passed lint, and still missed the point because I stopped paying attention.
