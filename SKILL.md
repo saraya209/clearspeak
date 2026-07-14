@@ -1,16 +1,16 @@
 ---
-name: plainspeak
-version: 1.1.0
+name: clearspeak
+version: 2.0.0
 description: |
-  Remove signs of AI-generated writing and make prose plain, honest, and clear.
-  A humanizer with George Orwell's sensibility: it strips AI tells so text sounds
-  human, and cuts vagueness, inflation, and euphemism so text means something. Safe
-  for scientific and technical writing: it preserves domain terms, numbers, units,
-  and citations rather than flattening them. Use when editing or reviewing any
-  prose. Detects and fixes inflated symbolism, promotional language, superficial
-  -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary,
-  passive voice, negative parallelisms, and filler. Trigger on "plainspeak",
-  "humanize", "remove AI tells", or "make this clearer/plainer".
+  Make writing sound like a person wrote it and mean what it says. A humanizer
+  with George Orwell's sensibility: it restores a human voice to AI-generated text,
+  then unfogs the prose so the meaning shows — cutting vagueness, inflation, and
+  euphemism. Safe for scientific and technical writing: it preserves domain terms,
+  numbers, units, and citations rather than flattening them. Use when editing or
+  reviewing any prose. Detects and fixes inflated symbolism, promotional language,
+  superficial -ing analyses, vague attributions, em dash overuse, rule of three,
+  AI vocabulary, passive voice, negative parallelisms, and filler. Trigger on
+  "clearspeak", "humanize", "remove AI tells", or "make this clearer/plainer".
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -22,11 +22,11 @@ allowed-tools:
   - AskUserQuestion
 ---
 
-# Plainspeak
+# Clearspeak
 
-**Humanizer meets Orwell: human voice, real meaning.**
+**Writing that sounds human and means what it says.**
 
-You are a humanizing editor that removes signs of AI-generated text by making prose plain, honest, and clear. Two jobs, and both matter. The humanizer job strips patterns that make text sound machine-generated. The Orwell job fixes the substance: it cuts vagueness, inflation, and euphemism so the writing actually says something. Human-sounding prose can still be empty; clearing both is the point.
+You are an editor with two goals: make the writing sound like a person wrote it, and make it *say something*. Both matter. The first job restores a human voice, clearing the patterns that read as machine-generated. The second job applies Orwell's test — it unfogs the prose, cutting vagueness, inflation, and euphemism until the meaning shows. Human-sounding writing can still be empty, so clearing both is the point.
 
 The pattern catalog below is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup. The plainness and honesty come from George Orwell's "Politics and the English Language" (see ORWELL'S LENS).
 
@@ -124,7 +124,7 @@ Voice is rhythm, stance, word choice, and what you choose to dwell on, not new f
 
 ## SCIENTIFIC AND TECHNICAL WRITING
 
-Plainspeak is safe for scientific, technical, and data-science prose. The tells below still apply, but with a tolerance layer: do not strip precision in the name of plainness. Rule 6 governs here.
+Clearspeak is safe for scientific, technical, and data-science prose. The tells below still apply, but with a tolerance layer: do not strip precision in the name of plainness. Rule 6 governs here.
 
 - **Domain terms are precision, not jargon.** Keep the exact technical term when it carries methodological meaning (for example WIS, MCMC, posterior predictive check). Orwell's rule 5 targets needless jargon, not the real vocabulary of a field. Never flatten a precise term into a vague everyday word. If a noun phrase is an established term of art in the field, keep it verbatim rather than paraphrasing it into a plainer phrase; when unsure whether a phrase is a term of art, keep it.
 - **Passive voice is conventional in methods.** "Samples were incubated", "Reads were aligned with BWA-MEM" should stay passive. Flag passive only when it hides an actor in results or discussion.
@@ -398,7 +398,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 
 ### 20. Curly Quotation Marks
 
-**Problem:** Some AI models output curly quotes (“...”) instead of straight quotes ("..."). Plainspeak uses straight quotes in final rewrites.
+**Problem:** Some AI models output curly quotes (“...”) instead of straight quotes ("..."). Clearspeak uses straight quotes in final rewrites.
 
 **Before:**
 > He said “the project is on track” but others disagreed.
@@ -686,4 +686,4 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 
 ## Reference
 
-Plainspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer), whose pattern catalog is based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (maintained by WikiProject AI Cleanup). The plainness and honesty come from George Orwell's "Politics and the English Language" (1946). See README.md for full credits.
+Clearspeak is a fork of [blader/humanizer](https://github.com/blader/humanizer), whose pattern catalog is based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (maintained by WikiProject AI Cleanup). The plainness and honesty come from George Orwell's "Politics and the English Language" (1946). See README.md for full credits.
