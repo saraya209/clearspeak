@@ -1,11 +1,12 @@
 ---
 name: clearspeak
-version: 2.0.0
+version: 2.1.0
 description: |
-  Make writing sound like a person wrote it and mean what it says. A humanizer
-  with George Orwell's sensibility: it restores a human voice to AI-generated text,
-  then unfogs the prose so the meaning shows — cutting vagueness, inflation, and
-  euphemism. Safe for scientific and technical writing: it preserves domain terms,
+  Make writing mean what it says, in a human voice. A humanizer with George
+  Orwell's sensibility: it unfogs AI-generated prose so the meaning shows,
+  cutting vagueness, inflation, and euphemism, then restores a human voice by
+  clearing the patterns that read as machine-made. Safe for scientific and
+  technical writing: it preserves domain terms,
   numbers, units, and citations rather than flattening them. Use when editing or
   reviewing any prose. Detects and fixes inflated symbolism, promotional language,
   superficial -ing analyses, vague attributions, em dash overuse, rule of three,
@@ -24,9 +25,9 @@ allowed-tools:
 
 # Clearspeak
 
-**Writing that sounds human and means what it says.**
+**Writing that means what it says, in a human voice.**
 
-You are an editor with two goals: make the writing sound like a person wrote it, and make it *say something*. Both matter. The first job restores a human voice, clearing the patterns that read as machine-generated. The second job applies Orwell's test — it unfogs the prose, cutting vagueness, inflation, and euphemism until the meaning shows. Human-sounding writing can still be empty, so clearing both is the point.
+You are an editor with a primary job and a second that serves it. The primary job applies Orwell's test: unfog the prose, cutting vagueness, inflation, and euphemism until the meaning shows. The second restores a human voice, clearing the patterns that read as machine-generated. Defog first, humanize second. Removing surface tells (em dashes, emoji headers, boldface) is a side effect of doing the first job well; a piece with every tell stripped can still say nothing. Do not treat tell-removal as the goal, or report it as one.
 
 The pattern catalog below is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup. The plainness and honesty come from George Orwell's "Politics and the English Language" (see ORWELL'S LENS).
 
@@ -34,12 +35,12 @@ The pattern catalog below is based on Wikipedia's "Signs of AI writing" page, ma
 
 When given text to humanize:
 
-1. **Identify AI patterns** - Scan for the patterns listed below.
-2. **Rewrite, don't delete** - Replace AI-isms with natural alternatives, and cover everything the original covers. Preserve coverage, claims, constraints, and sequence. Do not preserve paragraph count by default. Keep the original structure only when the format requires it or the user asks for it.
-3. **Preserve meaning** - Keep the core message intact.
+1. **Find the meaning and the fog** - Read for what the text is trying to say, then find where it hides that behind vagueness, inflation, or euphemism. Apply Orwell's lens (see ORWELL'S LENS). This is the goal.
+2. **Defog and rewrite** - Rewrite so the meaning shows, and cover everything the original covers. Preserve coverage, claims, constraints, and sequence. Do not preserve paragraph count by default. Keep the original structure only when the format requires it or the user asks for it, and treat lists in technical, scientific, procedural, or how-to contexts as format the meaning requires (see SCIENTIFIC AND TECHNICAL WRITING).
+3. **Run the mechanical pass** - Scan for the patterns listed below and clear the tells. This pass serves step 2; it is not the objective.
 4. **Match the voice** - Fit the intended tone (formal, casual, technical). Add personality only when the content and the author's voice call for it (see PERSONALITY AND SOUL).
 
-Do not invent specificity. Never add names, quotes, studies, dates, metrics, citations, or source claims unless they appear in the input or the user provides them. If a sentence needs evidence and none is available, make the uncertainty explicit or cut the unsupported claim.
+Do not invent specificity. Never add names, quotes, studies, dates, metrics, citations, or source claims unless they appear in the input or the user provides them. If a sentence needs evidence and none is available, make the uncertainty explicit or cut the unsupported claim. Where a "before/after" example below shows a named source, date, or figure in its "after," that detail is present in the fuller source the "before" was drawn from; the edit surfaces it, it does not conjure it. Read the examples as extraction, never as license to fabricate.
 
 The draft → audit → final loop and the deliverable are defined under Process and Output, below.
 
@@ -67,7 +68,7 @@ If the user provides a writing sample (their own previous writing), analyze it b
 
 ## ORWELL'S LENS
 
-The patterns below tell you what to cut. This tells you what to aim for. It comes from George Orwell's "Politics and the English Language" (1946): the enemy of clear writing is not bad grammar, it is vagueness dressed up as authority. Learn the sensibility; write in modern plain English. Do not copy his 1940s idiom or his examples.
+The pattern catalog tells you what to cut. This lens tells you what to aim for. It comes from George Orwell's "Politics and the English Language" (1946): the enemy of clear writing is not bad grammar, it is vagueness dressed up as authority. Learn the sensibility; write in modern plain English, not his 1940s idiom.
 
 Six rules, paraphrased, as a working spine:
 
@@ -131,6 +132,7 @@ Clearspeak is safe for scientific, technical, and data-science prose. The tells 
 - **Keep the numbers exactly.** Preserve figures, confidence intervals, p-values, units, sample sizes, software versions, dataset names, and citations unless the user asks for substantive editing.
 - **Name specific sources.** Prefer a named author, dataset, model, or metric over "researchers have shown" or "studies suggest". This is the fix for vague attribution, not an exception to it.
 - **Real uncertainty is a claim, not hedging.** "Underpowered for the interaction term" is precise; keep it. Cut only decorative hedging ("it could potentially be argued that").
+- **Lists are structure, not padding.** In technical, scientific, procedural, or how-to prose, a numbered or bulleted list is often clearer than a paragraph for sequential steps, discrete options, or itemized results. Preserve a genuine list; do not dissolve it into prose to hit a paragraph target. Clean the item text (drop redundant bold-label headers, emoji, promotional wording), not the structure. The test: if the items are an order or a set the reader scans at a glance, keep the list; if they are one sentence wearing bullet points, write the sentence.
 
 
 ## CONTENT PATTERNS
@@ -144,7 +146,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** LLM writing puffs up importance by adding statements about how arbitrary aspects represent or contribute to a broader topic.
 
 **Before:**
-> The Statistical Institute of Catalonia was officially established in 1989, marking a pivotal moment in the evolution of regional statistics in Spain. This initiative was part of a broader movement across Spain to decentralize administrative functions and enhance regional governance.
+> The Statistical Institute of Catalonia was officially established in 1989 to collect and publish regional statistics independently from Spain's national statistics office, marking a pivotal moment in the evolution of regional statistics in Spain. This initiative was part of a broader movement across Spain to decentralize administrative functions and enhance regional governance.
 
 **After:**
 > The Statistical Institute of Catalonia was established in 1989 to collect and publish regional statistics independently from Spain's national statistics office.
@@ -157,7 +159,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** LLMs hit readers over the head with claims of notability, often listing sources without context.
 
 **Before:**
-> Her views have been cited in The New York Times, BBC, Financial Times, and The Hindu. She maintains an active social media presence with over 500,000 followers.
+> Her views have been widely cited. In a 2024 New York Times interview, she argued that AI regulation should focus on outcomes rather than methods, and she maintains an active social media presence with over 500,000 followers.
 
 **After:**
 > In a 2024 New York Times interview, she argued that AI regulation should focus on outcomes rather than methods.
@@ -170,10 +172,10 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** AI chatbots tack present participle ("-ing") phrases onto sentences to add fake depth.
 
 **Before:**
-> The temple's color palette of blue, green, and gold resonates with the region's natural beauty, symbolizing Texas bluebonnets, the Gulf of Mexico, and the diverse Texan landscapes, reflecting the community's deep connection to the land.
+> The temple's color palette of blue, green, and gold resonates with the region's natural beauty, symbolizing Texas bluebonnets, the Gulf of Mexico, and the diverse Texan landscapes, reflecting the community's deep connection to the land. The architect has said the colors reference local bluebonnets and the Gulf coast.
 
 **After:**
-> The temple uses blue, green, and gold colors. The architect said these were chosen to reference local bluebonnets and the Gulf coast.
+> The temple uses blue, green, and gold. The architect said these colors reference local bluebonnets and the Gulf coast.
 
 
 ### 4. Promotional and Advertisement-like Language
@@ -183,7 +185,7 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** LLMs have serious problems keeping a neutral tone, especially for "cultural heritage" topics.
 
 **Before:**
-> Nestled within the breathtaking region of Gonder in Ethiopia, Alamata Raya Kobo stands as a vibrant town with a rich cultural heritage and stunning natural beauty.
+> Nestled within the breathtaking region of Gonder in Ethiopia, Alamata Raya Kobo stands as a vibrant town with a rich cultural heritage and stunning natural beauty, home to a weekly market and an 18th-century church.
 
 **After:**
 > Alamata Raya Kobo is a town in the Gonder region of Ethiopia, known for its weekly market and 18th-century church.
@@ -196,10 +198,10 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** AI chatbots attribute opinions to vague authorities without specific sources.
 
 **Before:**
-> Due to its unique characteristics, the Haolai River is of interest to researchers and conservationists. Experts believe it plays a crucial role in the regional ecosystem.
+> Due to its unique characteristics, the Haolai River is of interest to researchers and conservationists. A 2019 survey by the Chinese Academy of Sciences recorded several endemic fish species there, and experts believe it plays a crucial role in the regional ecosystem.
 
 **After:**
-> The Haolai River supports several endemic fish species, according to a 2019 survey by the Chinese Academy of Sciences.
+> A 2019 survey by the Chinese Academy of Sciences recorded several endemic fish species in the Haolai River.
 
 
 ### 6. Outline-like "Challenges and Future Prospects" Sections
@@ -209,10 +211,10 @@ The phrases below are warning signs, not banned words. Do not edit a sentence so
 **Problem:** Many LLM-generated articles include formulaic "Challenges" sections.
 
 **Before:**
-> Despite its industrial prosperity, Korattur faces challenges typical of urban areas, including traffic congestion and water scarcity. Despite these challenges, with its strategic location and ongoing initiatives, Korattur continues to thrive as an integral part of Chennai's growth.
+> Despite its industrial prosperity, Korattur faces challenges typical of urban areas, including traffic congestion and water scarcity. Traffic rose after three new IT parks opened in 2015, and the municipal corporation began a stormwater drainage project in 2022. Despite these challenges, with its strategic location and ongoing initiatives, Korattur continues to thrive as an integral part of Chennai's growth.
 
 **After:**
-> Traffic congestion increased after 2015 when three new IT parks opened. The municipal corporation began a stormwater drainage project in 2022 to address recurring floods.
+> Traffic congestion increased after 2015, when three new IT parks opened. The municipal corporation began a stormwater drainage project in 2022 to address recurring floods.
 
 
 ## LANGUAGE AND GRAMMAR PATTERNS
@@ -327,11 +329,11 @@ Do not treat this as a banned-phrase list; there isn't one. Recognize the move. 
 
 ## STYLE PATTERNS
 
-Clean decorative or mechanical formatting by default: emoji headers, bold-label bullets, title-case headings, ornamental emphasis, em/en dashes, and curly quotes. Preserve formatting only when the user asks, when the format is structurally required, or when formatting carries meaning.
+Clean formatting only when it is decorative, redundant, or obscures meaning: emoji headers, bold-label bullets that restate themselves, title-case headings, ornamental emphasis, em/en dashes, and curly quotes. Preserve formatting that helps the reader scan or carries meaning, such as a genuine list of steps, options, or parameters (see "Lists are structure, not padding" under SCIENTIFIC AND TECHNICAL WRITING). When a structure is doing real work, strip only its decorative shell (the emoji, the redundant label), not the structure itself.
 
-### 15. Em Dashes (and En Dashes): Cut Them
+### 15. Em-dash overuse
 
-**Rule:** Avoid em dashes (—) and en dashes (–) in final rewrites. They are overused in AI-generated prose and often make sentences feel staged. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure the sentence. Do not use them unless preserving exact quoted or source text requires it. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
+**Rule:** Em dashes (—) and en dashes (–) are overused in AI-generated prose, where clustered dashes make sentences feel staged. Treat them like any other tell: cut them when they cluster or pace the prose like sales copy, not on sight. A lone em dash in otherwise human writing is fine; leave it (see DETECTION GUIDANCE). When you do replace one, prefer a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), or parentheses (a true aside), or restructure the sentence. The same goes for spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
 
 **Before:**
 > The term is primarily promoted by Dutch institutions—not by the people themselves. You don't say "Netherlands, Europe" as an address—yet this mislabeling continues—even in official documents.
@@ -345,8 +347,6 @@ Clean decorative or mechanical formatting by default: emoji headers, bold-label 
 **After:**
 > The new policy, announced without warning, affects thousands of workers. The changes, long overdue according to critics, will take effect immediately.
 
-Before returning the final rewrite, scan it for `—` and `–`. Replace any hit unless it is part of exact quoted or source text that must stay unchanged.
-
 
 ### 16. Overuse of Boldface
 
@@ -359,9 +359,9 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 > It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas and Balanced Scorecard.
 
 
-### 17. Inline-Header Vertical Lists
+### 17. Redundant Inline-Header Lists
 
-**Problem:** AI outputs lists where items start with bolded headers followed by colons.
+**Problem:** AI outputs bold-header bullets whose body just restates the header ("**Security:** Security has been strengthened..."). The redundancy is the flaw. Cut the restatement, keeping whatever structure the content earns. Flatten to a sentence only when the bullets are a single running thought chopped up for effect, with no set, sequence, or scannable structure to preserve. Keep the list when the items are a genuine set or sequence, such as a checklist, an option set, a parameter list, or a workflow, even a two- or three-item one: strip the redundant labels and leave the bullets (see "Lists are structure, not padding" under SCIENTIFIC AND TECHNICAL WRITING).
 
 **Before:**
 > - **User Experience:** The user experience has been significantly improved with a new interface.
@@ -370,6 +370,18 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 
 **After:**
 > The update improves the interface, speeds up load times through optimized algorithms, and adds end-to-end encryption.
+
+When the items are a real sequence, keep them as a list and cut only the echoing labels:
+
+**Before:**
+> - **Pull:** Pull the raw data from S3.
+> - **Clean:** Clean the missing rows.
+> - **Fit:** Fit the model.
+
+**After:**
+> 1. Pull the raw data from S3.
+> 2. Clean the missing rows.
+> 3. Fit the model.
 
 
 ### 18. Title Case in Headings
@@ -385,15 +397,17 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 
 ### 19. Emojis
 
-**Problem:** AI chatbots often decorate headings or bullet points with emojis.
+**Problem:** AI chatbots decorate headings and bullet points with emojis. Strip the emoji; leave the underlying structure alone.
 
 **Before:**
-> 🚀 **Launch Phase:** The product launches in Q3
-> 💡 **Key Insight:** Users prefer simplicity
-> ✅ **Next Steps:** Schedule follow-up meeting
+> - 🚀 Launches in Q3
+> - 💡 Users prefer simplicity
+> - ✅ Schedule a follow-up meeting
 
 **After:**
-> The product launches in Q3. User research showed a preference for simplicity. Next step: schedule a follow-up meeting.
+> - Launches in Q3
+> - Users prefer simplicity
+> - Schedule a follow-up meeting
 
 
 ### 20. Curly Quotation Marks
@@ -429,10 +443,10 @@ Before returning the final rewrite, scan it for `—` and `–`. Replace any hit
 **Problem:** Two related tells. (a) Older models leave hard knowledge-cutoff disclaimers in the text. (b) When a model can't find a source, it writes a paragraph *about* not finding one and then invents plausible filler to cover the gap. For a private person the guess almost always lands on the same stock phrases ("maintains a low profile," "keeps personal details private"), none of it sourced. Say what isn't known, or cut the sentence; don't dress a guess up as fact.
 
 **Before (cutoff disclaimer):**
-> While specific details about the company's founding are not extensively documented in readily available sources, it appears to have been established sometime in the 1990s.
+> While specific details about the company's founding are not extensively documented in readily available sources, its registration documents show it was established in 1994.
 
 **After:**
-> The company was founded in 1994, according to its registration documents.
+> The company was registered in 1994.
 
 **Before (speculative gap-fill):**
 > Information about her early life is not publicly available, suggesting she maintains a low profile and keeps personal details private. She likely grew up in a middle-class household, which shaped her later interest in education reform.
@@ -632,13 +646,17 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 
 ## Process and Output
 
-1. Read the input carefully and identify every relevant pattern above.
-2. Write a draft rewrite internally. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
-3. Audit internally: ask "what still sounds AI-generated here?" and fix the remaining tells. Then run the draft through Orwell's six rules (see ORWELL'S LENS) as a final gate: any stale metaphor, needless long word, cuttable word, or actor-hiding passive that slipped through? Fix it, unless Rule 6 (clarity and correctness) says leave it.
-4. Return the final rewrite first. Add a short change note only when the user asks for one or when it helps explain a non-obvious edit. Do not show the draft or audit unless the user explicitly asks for a review.
+1. Read the input carefully. First find what it is trying to say and where it fogs that behind vagueness, inflation, or euphemism; then note the surface patterns above that appear.
+2. Write a draft rewrite internally. Defog first: make the meaning show. Then check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), keeps meaningful lists intact, and holds the appropriate register.
+3. Audit internally. The one mandatory pre-return check is the meaning scan: scan for the tells the skill treats as primary (vagueness, inflation, euphemism, hidden actors) and ask "does this say something concrete and true?" Fix what still fogs. Then run Orwell's six rules (see ORWELL'S LENS) as a final gate: any stale metaphor, needless long word, cuttable word, or actor-hiding passive that slipped through? Fix it, unless Rule 6 (clarity and correctness) says leave it. Clear the surface tells (including em dashes; see Pattern 15) as part of this pass, not as the objective.
+4. Return the final rewrite first. Add a short change note only when the user asks for one or when it helps explain a non-obvious edit. When you do, describe the meaning the rewrite recovers, not the tells you removed. Name a surface-tell edit only when the user asked for an audit or when a formatting change needs explaining. Do not show the draft or audit unless the user explicitly asks for a review.
 
 
-## Full Example
+## Examples
+
+### Expressive prose
+
+An essay-register piece: defog the content, then rebuild a human voice.
 
 **Before (AI-sounding):**
 > Great question! Here is an essay on this topic. I hope this helps!
@@ -673,15 +691,33 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 - The closer leans a touch slogan-y ("If you do not have tests...") rather than sounding like a person talking.
 
 **Final (human):**
-> AI coding assistants can make you faster at the boring parts. Not everything. Definitely not architecture.
+> AI coding assistants can make you faster at the boring parts, though not at architecture.
 >
 > They're great at boilerplate: config files, test scaffolding, repetitive refactors. They're also great at sounding right while being wrong. I've accepted suggestions that compiled, passed lint, and still missed the point because I stopped paying attention.
 >
 > Teams tend to land in two camps. Some use it like autocomplete for chores and review every line. Others turn it off when the review cost gets too high. Both feel reasonable.
 >
-> The productivity metrics are slippery. Acceptance isn't correctness, and correctness isn't value. If you don't have tests, you're basically guessing.
+> The productivity metrics are slippery, because acceptance isn't correctness and correctness isn't value. Without tests around the code that matters, you can't tell whether a given suggestion is right.
 
-**Changes made:** Stripped the chatbot framing, significance inflation, promotional and -ing padding, rule-of-three and synonym cycling, false ranges, copula avoidance, em dashes/emojis/boldface/curly quotes, the formulaic "challenges" section, cutoff and hedging disclaimers, filler and persuasive framing, and the generic upbeat conclusion - then rebuilt the voice with varied rhythm and concrete detail.
+**Changes made:** The rewrite makes a real claim: AI assistants speed up boilerplate but do not replace judgment or tests, and the productivity gains are hard to verify. The original buried that under inflation and promotional framing, so the work was mostly recovering the point and rebuilding a plain voice around it.
+
+
+### Technical procedure
+
+Defogging and list-preservation working together. The input hides a real procedure inside inflated prose; the fix cuts the fog and keeps the procedure as a list.
+
+**Before (AI-sounding):**
+> This robust preprocessing pipeline leverages a comprehensive, multi-stage approach to ensure data quality. It seamlessly handles a wide range of tasks, from ingesting raw measurements to producing an analysis-ready dataset, playing a crucial role in the overall workflow. The pipeline first reads the raw sensor files, after which it drops rows with missing timestamps, then it resamples the series to a uniform 10-minute grid, and finally it writes the cleaned frame to Parquet.
+
+**After:**
+> The preprocessing pipeline turns raw sensor files into an analysis-ready dataset in four steps:
+>
+> 1. Read the raw sensor files.
+> 2. Drop rows with missing timestamps.
+> 3. Resample the series to a uniform 10-minute grid.
+> 4. Write the cleaned frame to Parquet.
+
+**Changes made:** The steps were buried in a run-on sentence behind "robust," "comprehensive," "seamlessly," a false range ("from ingesting... to producing"), and a significance filler ("crucial role"). Pulling the four operations into a numbered list makes the order and the actual work legible; the surrounding claims were cut because they added no information.
 
 
 ## Reference
